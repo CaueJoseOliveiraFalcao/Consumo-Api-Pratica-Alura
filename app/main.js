@@ -5,16 +5,11 @@ getBuscarLivrosDaApi()
 async function getBuscarLivrosDaApi(){
     const res = await fetch(ApiUrl)
     livros = await res.json()
-    console.table(livros)
+    const livrosComDesconto = aplicarDesconto(livros);
+    console.table(livrosComDesconto);
 
-    Criarlivros(livros)
+    Criarlivros(livrosComDesconto)
 }
 
-function Criarlivros(livros){
-    const DivPrincipal = document.createElement('div')
-    DivPrincipal.classList.add('livro')
 
-    const ImagemCard = document.createElement('img')
-    ImagemCard.setAttribute('src' `${livros.imagem}`)
-    console.log(DivPrincipal)
-}
+    
