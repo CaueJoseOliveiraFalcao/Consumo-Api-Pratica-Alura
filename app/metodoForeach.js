@@ -2,6 +2,7 @@ function Criarlivros(livros){
     livros.forEach(element => {
     const DivPrincipal = document.createElement('div')
     DivPrincipal.classList.add('livro')
+    DivPrincipal.classList.add('RemovedorDeLivros')
 
     const ImagemCard = document.createElement('img')
     ImagemCard.classList.add('livro__imagens')
@@ -33,7 +34,6 @@ function Criarlivros(livros){
     Divtags.appendChild(TagsCard)
 
 
-    console.log(Divtags)
     document.querySelector('#livros').appendChild(DivPrincipal)
     });
 }
