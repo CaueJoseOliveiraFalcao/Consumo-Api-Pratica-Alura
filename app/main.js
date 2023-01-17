@@ -9,6 +9,7 @@ async function getBuscarLivrosDaApi(){
     //console.table(livrosComDesconto);
 
     Criarlivros(livrosComDesconto)
+    console.table(livrosComDesconto)
 }
 
 

@@ -1,4 +1,5 @@
 function Criarlivros(livros){
+    document.querySelector('#livros').innerHTML = ''
     livros.forEach(element => {
     const DivPrincipal = document.createElement('div')
     DivPrincipal.classList.add('livro')

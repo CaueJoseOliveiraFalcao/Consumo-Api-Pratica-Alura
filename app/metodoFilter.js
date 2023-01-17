@@ -1,17 +1,19 @@
-const FiltroFront = document.querySelector('#btnFiltrarLivrosFront');
-const FiltroBack = document.querySelector('#btnFiltrarLivrosBack');
-const FiltroDados = document.querySelector('#btnFiltrarLivrosDados');
-const FiltroDisponivel = document.querySelector('#btnLivrosDisponiveis');
-const FiltroPreco = document.querySelector('#btnOrdenarPorPreco');
+const Butoes = document.querySelectorAll('.btn')
 
-FiltroFront.addEventListener('click' , FiltrarLivrosFront)
+Butoes.forEach(element => {
+    element.addEventListener('click' , FiltrarLivros )
+});
 
-function FiltrarLivrosFront(){
-    const LivrosFiltrados = livros.filter(livros => livros.categoria == 'front-end')
-    LivrosFiltrados.forEach(element => {
-        console.log(element)
-        var elemento = document.querySelector('.RemovedorDeLivros')
-        elemento.parentNode.removeChild(elemento)
-    });
+function FiltrarLivros(){
+
+    const ElementoButao = document.getElementById(this.id)
+    const Categoria = ElementoButao.value
+    if (ElementoButao.id == 'btnOrdenarPorPreco'){
+        OrdernarPreco()
+        return
+    }
+    const LivrosFiltrados = livros.filter(livros => livros.categoria == Categoria)
+    Criarlivros(LivrosFiltrados)
+    
 
 }
