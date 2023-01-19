@@ -6,10 +6,8 @@ async function getBuscarLivrosDaApi(){
     const res = await fetch(ApiUrl)
     livros = await res.json()
     const livrosComDesconto = aplicarDesconto(livros);
-    //console.table(livrosComDesconto);
-
+    console.table(livrosComDesconto);
     Criarlivros(livrosComDesconto)
-    console.table(livrosComDesconto)
 }
 
 

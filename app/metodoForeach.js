@@ -1,12 +1,20 @@
 function Criarlivros(livros){
     document.querySelector('#livros').innerHTML = ''
     livros.forEach(element => {
+    document.querySelector('#valor_total_livros_disponiveis').innerHTML = ''
+        
+    let Disponivel = VerificarDisponibildade(element)
+    console.log(Disponivel)
+
     const DivPrincipal = document.createElement('div')
     DivPrincipal.classList.add('livro')
     DivPrincipal.classList.add('RemovedorDeLivros')
 
     const ImagemCard = document.createElement('img')
     ImagemCard.classList.add('livro__imagens')
+    if (Disponivel == false) {
+        ImagemCard.classList.add('indisponivel')
+    }
     ImagemCard.src = element.imagem
     DivPrincipal.appendChild(ImagemCard)
 
